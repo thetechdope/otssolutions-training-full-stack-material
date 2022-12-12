@@ -1,0 +1,4 @@
+-> call, apply and bind controls the value of 'this'
+-> deals with code repetition (DRY)
+-> call and apply execute function immedietly
+-> bind creates a new copy of a function with given reference of this.

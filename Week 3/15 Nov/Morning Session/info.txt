@@ -1,0 +1,17 @@
+when we execute something => callstack
+execution done => popped out from callstack
+
+
+fn sum(){
+    inner(){}
+    inner()
+
+}
+
+sum()                         =>       callstack.push(sum).push(innersum)
+
+
+
+// homework
+memoized sum
+

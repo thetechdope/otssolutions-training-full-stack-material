@@ -1,0 +1,43 @@
+#div-1 {
+  color: purple !important;
+}
+
+.span-1 {
+  color: blue;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.heading-1 {
+  color: grey !important;
+}
+
+body {
+  color: yellow;
+}
+
+table {
+  border: 1px dotted red;
+  color: indigo;
+  padding: 15px;
+  margin: 20px;
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

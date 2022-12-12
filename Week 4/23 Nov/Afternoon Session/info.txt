@@ -1,0 +1,15 @@
+<!DOCTYPE html> => type and version of html file
+starting tag => html
+html has to child tags => body and head
+head => meta-data => data of data (which we don't show on screen)
+body => has codes/info which we want to show on screen
+
+html elements are of two types on the basis of space they take:
+1. Inline elements: takes space according to content
+2. Block elements: take whole line
+
+list => ordered and unordered
+p, div, span, headings, img
+What is accessibility in web dev?
+sematic tag => tags which convey a meaning + helps in creating accessible website + helps in creating seo friendly application
+Example: form, input, button, audio, video, image, header, footer etc
