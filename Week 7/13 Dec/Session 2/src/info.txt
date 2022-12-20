@@ -1,0 +1,15 @@
+list -> edit button (index from map) -> send id to parent
+parent with index -> pick reciepe from array of this index -> send this to input form component via prop
+set default value of from states from the above selected reciepe prop
+
+const [chef, setChef] = useState('')
+
+useEffect(()=>{
+    setChef(prop.recipe,chef)
+}, [recipe])
+
+{props.recipe ? edit button code : submit button code}
+
+edit button code => 
+    1. splice array pick object of particular index edit it and then replace new object with old one on that index
+    2. empty recipe props 
