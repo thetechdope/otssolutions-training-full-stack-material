@@ -1,33 +1,49 @@
-// import Wishlist from './semantic-ui/Wishlist';
-import './App.css';
-import MenuBar from './User-list-Project/MenuBar';
-// import UseEffectImplementation001 from "./UseEffectImplementation001";
-// import Index from './useContext/Index';
-import TraineesComponent from './User-list-Project/TraineesComponent';
-import { Routes, Route } from 'react-router-dom';
-import React from 'react';
-import logo from './User-list-Project/image/logo.png';
-import { Image } from 'semantic-ui-react';
-import ContactUs from './User-list-Project/Contact Us/ContactUs';
+import React, { useState } from "react";
+import { Button, Header, Image, Modal } from "semantic-ui-react";
+import "./App.css";
+
+import Component1 from "./Modal_Implementation/Component1";
 
 function App() {
-	return (
-		// <div className="App">
-		// 	<Index />
-		// </div>
-		<div className="App">
-			<div style={{ display: 'flex', justifyContent: 'space-between', margin: '1rem' }}>
-				<Image src={logo} size="large" />
-				<MenuBar />
-			</div>
-			<Routes>
-				<Route path="/" element={<div>Home</div>} />
-				<Route path="/services" element={<div>Services</div>} />
-				<Route path="/contactus" element={<ContactUs />} />
-				<Route path="/trainees" element={<TraineesComponent />} />
-			</Routes>
-		</div>
-	);
+  const [openModal, setOpenModal] = useState(false);
+  return (
+    <div>
+      <Component1 />
+
+      <br />
+      <br />
+
+      <button onClick={() => setOpenModal(true)}>Open Modal</button>
+
+      {openModal && (
+        <Modal onClose={() => setOpenModal(false)} open={openModal}>
+          <Modal.Header>Select a Photo</Modal.Header>
+          <Modal.Content>
+            <Modal.Description>
+              <Header>Default Profile Image</Header>
+              <p>
+                We've found the following gravatar image associated with your
+                e-mail address.
+              </p>
+              <p>Is it okay to use this photo?</p>
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color="black" onClick={() => setOpenModal(false)}>
+              Nope
+            </Button>
+            {/* <Button
+              content="Yep, that's me"
+              labelPosition="right"
+              icon="checkmark"
+              onClick={() => setOpen(false)}
+              positive
+            /> */}
+          </Modal.Actions>
+        </Modal>
+      )}
+    </div>
+  );
 }
 
 export default App;

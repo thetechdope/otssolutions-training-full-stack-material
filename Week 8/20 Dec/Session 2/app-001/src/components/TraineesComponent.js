@@ -7,77 +7,52 @@ const TraineesComponent = () => {
   const [traineesList, setTraineesList] = useState([]);
   const [searchedTraineesList, setSearchedTraineesList] = useState([]);
 
+  const getUpdatedData = (data) => {
+    let dataAfterUpdation = traineesList.map((user) => {
+      if (user.id == data.id) {
+        return { ...user, email: data.updatedEmail };
+      } else {
+        return { ...user };
+      }
+    });
+
+    setTraineesList(dataAfterUpdation);
+  };
+
   const mockTraineesData = [
     {
+      id: 1,
       firstName: "Rahul",
       lastName: "Rauniyar",
       email: "rahul@otssolutions.com",
       gender: "Male",
     },
     {
+      id: 2,
       firstName: "Saurabh",
       lastName: "Singh",
       email: "saurabh@otssolutions.com",
       gender: "Male",
     },
     {
+      id: 3,
       firstName: "Mohd.",
       lastName: "Ehtesham",
       email: "ehtesham@otssolutions.com",
       gender: "Male",
     },
     {
-      firstName: "Arun",
-      lastName: "Kumar",
-      email: "ehtesham@otssolutions.com",
-      gender: "Male",
-    },
-    {
+      id: 4,
       firstName: "Rahul",
       lastName: "Rauniyar",
       email: "rahul@otssolutions.com",
       gender: "Male",
     },
     {
+      id: 5,
       firstName: "Saurabh",
       lastName: "Singh",
       email: "saurabh@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Mohd.",
-      lastName: "Ehtesham",
-      email: "ehtesham@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Arun",
-      lastName: "Kumar",
-      email: "ehtesham@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Rahul",
-      lastName: "Rauniyar",
-      email: "rahul@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Saurabh",
-      lastName: "Singh",
-      email: "saurabh@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Mohd.",
-      lastName: "Ehtesham",
-      email: "ehtesham@otssolutions.com",
-      gender: "Male",
-    },
-    {
-      firstName: "Arun",
-      lastName: "Kumar",
-      email: "ehtesham@otssolutions.com",
       gender: "Male",
     },
   ];
@@ -165,6 +140,7 @@ const TraineesComponent = () => {
       <div style={{ margin: "1rem" }}>
         <TraineesList
           trainees={searchTerm == "" ? traineesList : searchedTraineesList}
+          getUpdatedData={getUpdatedData}
         />
       </div>
     </>
