@@ -1,0 +1,8 @@
+client-id
+
+95548258727-b3qlpk5j3sjjik2rme8p4cu278lm0nkm.apps.googleusercontent.com
+
+
+client-secret
+
+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
