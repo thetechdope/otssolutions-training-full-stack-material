@@ -71,7 +71,50 @@ const updateUser = (req, res) => {
   console.log(searchedUser);
 };
 
-const updateUserFull = (req, res) => {};
+const updateUserFull = (req, res) => {
+  const { id } = req.params;
+  // const { firstName, lastName, age, city } = req.body;
+
+  /*
+    {
+        id: "0xacbdef123456"
+        firstName: "A",
+        lastName: "B",
+        age: 20,
+        city: "ABC"
+    }
+
+    -> 
+
+    Payload - 
+
+    {
+      firstName: "Rahul",
+      age: 23
+    }
+
+    Output -
+
+    {
+      id: "0xacbdef123456",
+      firstName: "Rahul",
+      age: 23
+    }
+
+  */
+
+  const searchedUser = users.find((user) => {
+    return user.id === id;
+  });
+
+  if (searchedUser) {
+    const { id } = req.params.id;
+    let updateUserDetails = { id, ...req.body };
+    console.log(updateUserDetails);
+  } else {
+    console.log(`No User Found with id '${id}'!`);
+  }
+};
 
 const deleteUser = (req, res) => {
   const { id } = req.params;
