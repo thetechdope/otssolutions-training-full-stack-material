@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import PersonComponent from "./PersonComponent";
+import ProductComponent from "./ProductComponent";
+import { Grid } from "semantic-ui-react";
 
 function App() {
   const personDetails = [
@@ -26,6 +28,72 @@ function App() {
       firstName: "Rahul",
       lastName: "Rauniyar",
       age: 20,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Amit",
+      lastName: "Sharma",
+      age: 27,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Akshay",
+      lastName: "Khurana",
+      age: 27,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Saurabh",
+      lastName: "Singh",
+      age: 20,
+      hometown: "Gurgaon",
+    },
+    {
+      firstName: "Manisha",
+      lastName: "More",
+      age: 20,
+      hometown: "Pune",
+    },
+    {
+      firstName: "Rahul",
+      lastName: "Rauniyar",
+      age: 20,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Amit",
+      lastName: "Sharma",
+      age: 27,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Akshay",
+      lastName: "Khurana",
+      age: 27,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Saurabh",
+      lastName: "Singh",
+      age: 20,
+      hometown: "Gurgaon",
+    },
+    {
+      firstName: "Manisha",
+      lastName: "More",
+      age: 20,
+      hometown: "Pune",
+    },
+    {
+      firstName: "Rahul",
+      lastName: "Rauniyar",
+      age: 20,
+      hometown: "Meerut",
+    },
+    {
+      firstName: "Amit",
+      lastName: "Sharma",
+      age: 27,
       hometown: "Meerut",
     },
     {
@@ -60,18 +128,15 @@ function App() {
   ];
 
   return (
-    <div>
+    <Grid>
       {personDetails.map((currentIteration) => {
         return (
-          <PersonComponent
-            firstName={currentIteration.firstName}
-            lastName={currentIteration.lastName}
-            age={currentIteration.age}
-            hometown={currentIteration.hometown}
-          />
+          <Grid.Column mobile={16} tablet={8} computer={4}>
+            <ProductComponent />
+          </Grid.Column>
         );
       })}
-    </div>
+    </Grid>
   );
 }
 

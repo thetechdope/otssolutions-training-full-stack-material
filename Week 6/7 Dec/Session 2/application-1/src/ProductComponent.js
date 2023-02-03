@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Card, Icon } from "semantic-ui-react";
+import { Card, Icon } from "semantic-ui-react";
 
 function ProductComponent() {
   return (
-    <Container>
+    <>
       <Card>
         {/* <Image src="/images/avatar/large/matthew.png" wrapped ui={false} /> */}
         <Card.Content>
@@ -22,7 +22,7 @@ function ProductComponent() {
           </a>
         </Card.Content>
       </Card>
-    </Container>
+    </>
   );
 }
 
