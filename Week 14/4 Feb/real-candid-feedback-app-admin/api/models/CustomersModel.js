@@ -1,35 +1,48 @@
 import mongoose from "mongoose";
 
-const CustomersSchema = new mongoose.Schema({
-  firstName: {
-    type: String,
-    required: true,
+const CustomersSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+    otp: {
+      type: Number,
+      default: Math.floor((Math.random() + 1) * 1000),
+    },
+    isEmailVerfified: {
+      type: Boolean,
+      default: false,
+    },
+    feedbacksProvided: {
+      type: [FeedbacksSchema],
+    },
   },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  phoneNumber: {
-    type: String,
-    required: true,
-  },
-  isActive: {
-    type: Boolean,
-    default: true,
-  },
-  feedbacksProvided: {
-    type: [FeedbacksSchema],
-  },
-});
+  {
+    collection: "Customers",
+  }
+);
 
 const FeedbacksSchema = new mongoose.Schema(
   {
